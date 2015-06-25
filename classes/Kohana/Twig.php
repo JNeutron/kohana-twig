@@ -188,7 +188,7 @@ class Kohana_Twig extends View {
 
         if (empty($this->_file))
         {
-            throw new View_Exception('You must set the file to use within your view before rendering');
+            throw new Twig_Exception('You must set the file to use within your view before rendering');
         }
 
         // Get environment
