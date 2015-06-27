@@ -114,9 +114,10 @@ class Kohana_Twig extends View {
         // Functions
         if ( ! empty(Twig::$config['functions']))
         {
-            foreach (Twig::$config['functions'] as $name => $callable)
+            foreach (Twig::$config['functions'] as $params)
             {
-                $function = new Twig_SimpleFunction($name, $callable);
+                list($name, $callable, $options) = array_pad($params, 3, array());
+                $function = new Twig_SimpleFunction($name, $callable, $options);
                 $env->addFunction($function);
             }
         }
@@ -124,9 +125,10 @@ class Kohana_Twig extends View {
         // Filters
         if ( ! empty(Twig::$config['filters']))
         {
-            foreach (Twig::$config['filters'] as $name => $callable)
+            foreach (Twig::$config['filters'] as $params)
             {
-                $filter = new Twig_SimpleFilter($name, $callable);
+                list($name, $callable, $options) = array_pad($params, 3, array());
+                $filter = new Twig_SimpleFilter($name, $callable, $options);
                 $env->addFilter($filter);
             }
         }
@@ -134,9 +136,10 @@ class Kohana_Twig extends View {
         // Tests
         if ( ! empty(Twig::$config['tests']))
         {
-            foreach (Twig::$config['tests'] as $name => $callable)
+            foreach (Twig::$config['tests'] as $params)
             {
-                $test = new Twig_SimpleTest($name, $callable);
+                list($name, $callable, $options) = array_pad($params, 3, array());
+                $test = new Twig_SimpleTest($name, $callable, $options);
                 $env->addTest($test);
             }
         }

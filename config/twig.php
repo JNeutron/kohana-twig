@@ -45,7 +45,7 @@ return array(
      * Custom functions, filters and tests
      *
      *     'functions' => array(
-     *         'my_method' => array('MyClass', 'my_method'),
+     *         array('my_method', array('MyClass', 'my_method'), array('is_safe' => array('html'))),
      *     ),
      */
     'functions' => array(),
