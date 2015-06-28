@@ -107,7 +107,7 @@ class Kohana_Twig extends View {
     {
         // Instance of Environment
         $env = new Twig_Environment(
-            new Twig_loader_CFS(Twig::$config['loader']),
+            new Twig_Loader_CFS(Twig::$config['loader']),
             Twig::$config['environment']
         );
 
